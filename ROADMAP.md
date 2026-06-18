@@ -1,0 +1,271 @@
+# 🛣️️ Road-map
+
+> [👈 Back to README](./README.md)
+
+## Goal
+
+Build a full-stack task management app where users can create projects, manage tasks, assign statuses, set priorities, and track progress.
+
+## MVP Road-map
+
+- [ ] 0. Project bootstrap ➕ 2026-06-18
+  - [x] Setup oxlint ➕ 2026-06-18 ✅ 2026-06-18
+  - [x] Setup oxfmt ➕ 2026-06-18 ✅ 2026-06-18
+  - [x] Setup the project using `vite plus` ➕ 2026-06-18 ✅ 2026-06-18
+- [ ] 1. Project setup ➕ 2026-06-18
+  - [ ] Choose the stack for frontend, backend, database, and ORM ➕ 2026-06-18
+  - [ ] Set up the project repository ➕ 2026-06-18
+  - [ ] Configure environment variables ➕ 2026-06-18
+  - [ ] Connect the app to a real database ➕ 2026-06-18
+  - [ ] Add basic error handling utilities ➕ 2026-06-18
+  - [ ] Add validation utilities or validation library ➕ 2026-06-18
+- [ ] 2. Database schema ➕ 2026-06-18
+  - [ ] Create `users` table/model ➕ 2026-06-18
+    - [ ] `id` ➕ 2026-06-18
+    - [ ] `name` ➕ 2026-06-18
+    - [ ] `email` ➕ 2026-06-18
+    - [ ] `password_hash` ➕ 2026-06-18
+    - [ ] `created_at` ➕ 2026-06-18
+    - [ ] `updated_at` ➕ 2026-06-18
+  - [ ] Add unique constraint for `users.email` ➕ 2026-06-18
+  - [ ] Create `projects` table/model ➕ 2026-06-18
+    - [ ] `id` ➕ 2026-06-18
+    - [ ] `owner_id` ➕ 2026-06-18
+    - [ ] `name` ➕ 2026-06-18
+    - [ ] `description` ➕ 2026-06-18
+    - [ ] `created_at` ➕ 2026-06-18
+    - [ ] `updated_at` ➕ 2026-06-18
+  - [ ] Create `tasks` table/model ➕ 2026-06-18
+    - [ ] `id` ➕ 2026-06-18
+    - [ ] `project_id` ➕ 2026-06-18
+    - [ ] `title` ➕ 2026-06-18
+    - [ ] `description` ➕ 2026-06-18
+    - [ ] `status` ➕ 2026-06-18
+    - [ ] `priority` ➕ 2026-06-18
+    - [ ] `due_date` ➕ 2026-06-18
+    - [ ] `created_at` ➕ 2026-06-18
+    - [ ] `updated_at` ➕ 2026-06-18
+  - [ ] Define relationship: one user has many projects ➕ 2026-06-18
+  - [ ] Define relationship: one project has many tasks ➕ 2026-06-18
+  - [ ] Configure project deletion to delete related tasks ➕ 2026-06-18
+  - [ ] Configure user deletion to delete related projects and tasks ➕ 2026-06-18
+- [ ] 3. Authentication backend ➕ 2026-06-18
+  - [ ] Implement password hashing ➕ 2026-06-18
+  - [ ] Implement user registration endpoint: `POST /api/auth/register` ➕ 2026-06-18
+    - [ ] Validate name is required ➕ 2026-06-18
+    - [ ] Validate email is required ➕ 2026-06-18
+    - [ ] Validate email format ➕ 2026-06-18
+    - [ ] Validate password is required ➕ 2026-06-18
+    - [ ] Validate password is at least 8 characters ➕ 2026-06-18
+    - [ ] Reject duplicate email registrations ➕ 2026-06-18
+    - [ ] Save hashed password only ➕ 2026-06-18
+    - [ ] Return user data without password hash ➕ 2026-06-18
+  - [ ] Implement login endpoint: `POST /api/auth/login` ➕ 2026-06-18
+    - [ ] Validate email is required ➕ 2026-06-18
+    - [ ] Validate password is required ➕ 2026-06-18
+    - [ ] Check credentials ➕ 2026-06-18
+    - [ ] Create session or token ➕ 2026-06-18
+    - [ ] Return user data without password hash ➕ 2026-06-18
+  - [ ] Implement logout endpoint: `POST /api/auth/logout` ➕ 2026-06-18
+  - [ ] Implement current user endpoint: `GET /api/auth/me` ➕ 2026-06-18
+  - [ ] Protect authenticated routes from unauthenticated users ➕ 2026-06-18
+- [ ] 4. Project backend ➕ 2026-06-18
+  - [ ] Implement get projects endpoint: `GET /api/projects` ➕ 2026-06-18
+    - [ ] Return only projects owned by the logged-in user ➕ 2026-06-18
+    - [ ] Include number of tasks per project ➕ 2026-06-18
+    - [ ] Include number of completed tasks per project ➕ 2026-06-18
+  - [ ] Implement create project endpoint: `POST /api/projects` ➕ 2026-06-18
+    - [ ] Validate project name is required ➕ 2026-06-18
+    - [ ] Validate project name max length is 100 characters ➕ 2026-06-18
+    - [ ] Validate description max length is 500 characters ➕ 2026-06-18
+    - [ ] Attach project to logged-in user ➕ 2026-06-18
+  - [ ] Implement get single project endpoint: `GET /api/projects/:projectId` ➕ 2026-06-18
+    - [ ] Return project only if owned by logged-in user ➕ 2026-06-18
+    - [ ] Include project tasks ➕ 2026-06-18
+  - [ ] Implement update project endpoint: `PATCH /api/projects/:projectId` ➕ 2026-06-18
+    - [ ] Allow update only if project is owned by logged-in user ➕ 2026-06-18
+    - [ ] Validate project name max length is 100 characters ➕ 2026-06-18
+    - [ ] Validate description max length is 500 characters ➕ 2026-06-18
+  - [ ] Implement delete project endpoint: `DELETE /api/projects/:projectId` ➕ 2026-06-18
+    - [ ] Allow delete only if project is owned by logged-in user ➕ 2026-06-18
+    - [ ] Delete related tasks too ➕ 2026-06-18
+- [ ] 5. Task backend ➕ 2026-06-18
+  - [ ] Implement create task endpoint: `POST /api/projects/:projectId/tasks` ➕ 2026-06-18
+    - [ ] Confirm project belongs to logged-in user ➕ 2026-06-18
+    - [ ] Validate task title is required ➕ 2026-06-18
+    - [ ] Validate task title max length is 100 characters ➕ 2026-06-18
+    - [ ] Validate description max length is 1000 characters ➕ 2026-06-18
+    - [ ] Validate status is `todo`, `in_progress`, or `done` ➕ 2026-06-18
+    - [ ] Validate priority is `low`, `medium`, or `high` ➕ 2026-06-18
+    - [ ] Allow due date to be optional ➕ 2026-06-18
+  - [ ] Implement update task endpoint: `PATCH /api/tasks/:taskId` ➕ 2026-06-18
+    - [ ] Confirm task belongs to a project owned by logged-in user ➕ 2026-06-18
+    - [ ] Validate task title max length is 100 characters ➕ 2026-06-18
+    - [ ] Validate description max length is 1000 characters ➕ 2026-06-18
+    - [ ] Validate status is `todo`, `in_progress`, or `done` ➕ 2026-06-18
+    - [ ] Validate priority is `low`, `medium`, or `high` ➕ 2026-06-18
+  - [ ] Implement delete task endpoint: `DELETE /api/tasks/:taskId` ➕ 2026-06-18
+    - [ ] Confirm task belongs to a project owned by logged-in user ➕ 2026-06-18
+- [ ] 6. Public frontend pages ➕ 2026-06-18
+  - [ ] Build home page ➕ 2026-06-18
+    - [ ] Show app name ➕ 2026-06-18
+    - [ ] Show short description ➕ 2026-06-18
+    - [ ] Add login button ➕ 2026-06-18
+    - [ ] Add register button ➕ 2026-06-18
+  - [ ] Build register page ➕ 2026-06-18
+    - [ ] Add name input ➕ 2026-06-18
+    - [ ] Add email input ➕ 2026-06-18
+    - [ ] Add password input ➕ 2026-06-18
+    - [ ] Add confirm password input ➕ 2026-06-18
+    - [ ] Add submit button ➕ 2026-06-18
+    - [ ] Add link to login page ➕ 2026-06-18
+    - [ ] Validate required fields ➕ 2026-06-18
+    - [ ] Validate email format ➕ 2026-06-18
+    - [ ] Validate password minimum length of 8 characters ➕ 2026-06-18
+    - [ ] Validate confirm password matches password ➕ 2026-06-18
+    - [ ] Show validation errors to the user ➕ 2026-06-18
+  - [ ] Build login page ➕ 2026-06-18
+    - [ ] Add email input ➕ 2026-06-18
+    - [ ] Add password input ➕ 2026-06-18
+    - [ ] Add submit button ➕ 2026-06-18
+    - [ ] Add link to register page ➕ 2026-06-18
+    - [ ] Validate required fields ➕ 2026-06-18
+    - [ ] Show error for invalid credentials ➕ 2026-06-18
+- [ ] 7. Protected frontend pages ➕ 2026-06-18
+  - [ ] Build authenticated layout ➕ 2026-06-18
+    - [ ] Redirect unauthenticated users away from protected pages ➕ 2026-06-18
+    - [ ] Add logout button ➕ 2026-06-18
+  - [ ] Build dashboard page ➕ 2026-06-18
+    - [ ] Show greeting with user name ➕ 2026-06-18
+    - [ ] Show list of projects ➕ 2026-06-18
+    - [ ] Add create project button ➕ 2026-06-18
+    - [ ] For each project, show project name ➕ 2026-06-18
+    - [ ] For each project, show project description ➕ 2026-06-18
+    - [ ] For each project, show number of tasks ➕ 2026-06-18
+    - [ ] For each project, show number of completed tasks ➕ 2026-06-18
+    - [ ] For each project, add link to open project ➕ 2026-06-18
+    - [ ] For each project, add edit button ➕ 2026-06-18
+    - [ ] For each project, add delete button ➕ 2026-06-18
+  - [ ] Build project detail page ➕ 2026-06-18
+    - [ ] Show project name ➕ 2026-06-18
+    - [ ] Show project description ➕ 2026-06-18
+    - [ ] Add edit project button ➕ 2026-06-18
+    - [ ] Add delete project button ➕ 2026-06-18
+    - [ ] Add create task button ➕ 2026-06-18
+    - [ ] Show tasks grouped by status ➕ 2026-06-18
+    - [ ] Add Todo column ➕ 2026-06-18
+    - [ ] Add In Progress column ➕ 2026-06-18
+    - [ ] Add Done column ➕ 2026-06-18
+  - [ ] Build task cards ➕ 2026-06-18
+    - [ ] Show task title ➕ 2026-06-18
+    - [ ] Show task priority ➕ 2026-06-18
+    - [ ] Show due date when available ➕ 2026-06-18
+    - [ ] Add edit button ➕ 2026-06-18
+    - [ ] Add delete button ➕ 2026-06-18
+    - [ ] Add control to change status ➕ 2026-06-18
+  - [ ] Build task detail modal or page ➕ 2026-06-18
+    - [ ] Show task title ➕ 2026-06-18
+    - [ ] Show task description ➕ 2026-06-18
+    - [ ] Show status ➕ 2026-06-18
+    - [ ] Show priority ➕ 2026-06-18
+    - [ ] Show due date ➕ 2026-06-18
+    - [ ] Show created date ➕ 2026-06-18
+    - [ ] Show updated date ➕ 2026-06-18
+- [ ] 8. Forms ➕ 2026-06-18
+  - [ ] Build create project form ➕ 2026-06-18
+    - [ ] Add project name input ➕ 2026-06-18
+    - [ ] Add project description textarea ➕ 2026-06-18
+    - [ ] Add save button ➕ 2026-06-18
+    - [ ] Add cancel button ➕ 2026-06-18
+    - [ ] Validate project name is required ➕ 2026-06-18
+    - [ ] Validate project name max length is 100 characters ➕ 2026-06-18
+    - [ ] Validate description max length is 500 characters ➕ 2026-06-18
+  - [ ] Build edit project form ➕ 2026-06-18
+    - [ ] Pre-fill existing project values ➕ 2026-06-18
+    - [ ] Save updated values ➕ 2026-06-18
+    - [ ] Cancel without saving ➕ 2026-06-18
+  - [ ] Build create task form ➕ 2026-06-18
+    - [ ] Add task title input ➕ 2026-06-18
+    - [ ] Add task description textarea ➕ 2026-06-18
+    - [ ] Add status dropdown ➕ 2026-06-18
+    - [ ] Add priority dropdown ➕ 2026-06-18
+    - [ ] Add due date input ➕ 2026-06-18
+    - [ ] Add save button ➕ 2026-06-18
+    - [ ] Add cancel button ➕ 2026-06-18
+    - [ ] Validate task title is required ➕ 2026-06-18
+    - [ ] Validate task title max length is 100 characters ➕ 2026-06-18
+    - [ ] Validate description max length is 1000 characters ➕ 2026-06-18
+    - [ ] Validate status is valid ➕ 2026-06-18
+    - [ ] Validate priority is valid ➕ 2026-06-18
+  - [ ] Build edit task form ➕ 2026-06-18
+    - [ ] Pre-fill existing task values ➕ 2026-06-18
+    - [ ] Save updated values ➕ 2026-06-18
+    - [ ] Cancel without saving ➕ 2026-06-18
+- [ ] 9. Required user flows ➕ 2026-06-18
+  - [ ] User can register and is redirected to dashboard ➕ 2026-06-18
+  - [ ] User can log out ➕ 2026-06-18
+  - [ ] User can log in again ➕ 2026-06-18
+  - [ ] User can create a project from the dashboard ➕ 2026-06-18
+  - [ ] New project appears on the dashboard ➕ 2026-06-18
+  - [ ] User can open a project ➕ 2026-06-18
+  - [ ] User can create a task inside a project ➕ 2026-06-18
+  - [ ] New task appears in the correct status column ➕ 2026-06-18
+  - [ ] User can change task status from `todo` to `in_progress` ➕ 2026-06-18
+  - [ ] User can change task status from `in_progress` to `done` ➕ 2026-06-18
+  - [ ] Task moves between columns when status changes ➕ 2026-06-18
+  - [ ] User can delete a task ➕ 2026-06-18
+  - [ ] Deleted task disappears ➕ 2026-06-18
+  - [ ] User can delete a project ➕ 2026-06-18
+  - [ ] Deleted project disappears from dashboard ➕ 2026-06-18
+  - [ ] Tasks are deleted when their project is deleted ➕ 2026-06-18
+- [ ] 10. Error handling and security ➕ 2026-06-18
+  - [ ] Show error for invalid login ➕ 2026-06-18
+  - [ ] Show error for duplicate email registration ➕ 2026-06-18
+  - [ ] Show error for missing required fields ➕ 2026-06-18
+  - [ ] Show error for invalid task status ➕ 2026-06-18
+  - [ ] Show error for invalid task priority ➕ 2026-06-18
+  - [ ] Show error for unauthorized access ➕ 2026-06-18
+  - [ ] Prevent users from accessing another user's projects ➕ 2026-06-18
+  - [ ] Prevent users from editing another user's projects ➕ 2026-06-18
+  - [ ] Prevent users from deleting another user's projects ➕ 2026-06-18
+  - [ ] Prevent users from editing another user's tasks ➕ 2026-06-18
+  - [ ] Prevent users from deleting another user's tasks ➕ 2026-06-18
+  - [ ] Show friendly network/server error messages ➕ 2026-06-18
+  - [ ] Ask for confirmation before deleting a project ➕ 2026-06-18
+  - [ ] Ask for confirmation before deleting a task ➕ 2026-06-18
+- [ ] 11. MVP completion checklist ➕ 2026-06-18
+  - [ ] Users can register ➕ 2026-06-18
+  - [ ] Users can log in ➕ 2026-06-18
+  - [ ] Users can log out ➕ 2026-06-18
+  - [ ] Logged-in users can create projects ➕ 2026-06-18
+  - [ ] Logged-in users can create tasks inside projects ➕ 2026-06-18
+  - [ ] Users can edit their own projects ➕ 2026-06-18
+  - [ ] Users can delete their own projects ➕ 2026-06-18
+  - [ ] Users can edit their own tasks ➕ 2026-06-18
+  - [ ] Users can delete their own tasks ➕ 2026-06-18
+  - [ ] Tasks are grouped by status ➕ 2026-06-18
+  - [ ] Data is stored in a real database ➕ 2026-06-18
+  - [ ] Users cannot access other users' data ➕ 2026-06-18
+
+## Optional upgrades after MVP ➕ 2026-06-18
+
+➕ 2026-06-18
+
+- [ ] Add drag and drop tasks between columns ➕ 2026-06-18
+- [ ] Add task search ➕ 2026-06-18
+- [ ] Add task filters by priority ➕ 2026-06-18
+- [ ] Add task filters by status ➕ 2026-06-18
+- [ ] Add comments on tasks ➕ 2026-06-18
+- [ ] Add multiple users per project ➕ 2026-06-18
+- [ ] Add task assignment to users ➕ 2026-06-18
+- [ ] Add email notifications ➕ 2026-06-18
+- [ ] Add dark mode ➕ 2026-06-18
+- [ ] Add activity log ➕ 2026-06-18
+- [ ] Add file attachments ➕ 2026-06-18
+- [ ] Add pagination ➕ 2026-06-18
+- [ ] Deploy frontend and backend ➕ 2026-06-18
+- [ ] Add automated tests ➕ 2026-06-18
+
+---
+
+## 🗃️ Archive
