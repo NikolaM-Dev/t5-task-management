@@ -8,15 +8,11 @@ Build a full-stack task management app where users can create projects, manage t
 
 ## MVP Road-map
 
-- [ ] 0. Project bootstrap ➕ 2026-06-18
-  - [x] Setup oxlint ➕ 2026-06-18 ✅ 2026-06-18
-  - [x] Setup oxfmt ➕ 2026-06-18 ✅ 2026-06-18
-  - [x] Setup the project using `vite plus` ➕ 2026-06-18 ✅ 2026-06-18
 - [ ] 1. Project setup ➕ 2026-06-18
   - [ ] Choose the stack for frontend, backend, database, and ORM ➕ 2026-06-18
-  - [ ] Set up the project repository ➕ 2026-06-18
+  - [x] Set up the project repository ➕ 2026-06-18 ✅ 2026-06-18
   - [ ] Configure environment variables ➕ 2026-06-18
-  - [ ] Connect the app to a real database ➕ 2026-06-18
+  - [x] Connect the app to a real database ➕ 2026-06-18 ✅ 2026-06-18
   - [ ] Add basic error handling utilities ➕ 2026-06-18
   - [ ] Add validation utilities or validation library ➕ 2026-06-18
 - [ ] 2. Database schema ➕ 2026-06-18
@@ -269,3 +265,8 @@ Build a full-stack task management app where users can create projects, manage t
 ---
 
 ## 🗃️ Archive
+
+- [x] 0. Project bootstrap ➕ 2026-06-18 ✅ 2026-06-18
+  - [x] Setup oxlint ➕ 2026-06-18 ✅ 2026-06-18
+  - [x] Setup oxfmt ➕ 2026-06-18 ✅ 2026-06-18
+  - [x] Setup the project using `vite plus` ➕ 2026-06-18 ✅ 2026-06-18
