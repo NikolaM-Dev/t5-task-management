@@ -250,6 +250,9 @@ importers:
       tailwindcss:
         specifier: 4.1.18
         version: 4.1.18
+      valibot:
+        specifier: 1.4.1
+        version: 1.4.1(typescript@6.0.2)
     devDependencies:
       '@tailwindcss/typography':
         specifier: 0.5.16
@@ -2890,6 +2893,14 @@ packages:
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
+  valibot@1.4.1:
+    resolution: {integrity: sha512-klCmFTz2jeDluy9RwX+F884TCiogtdBJ/YaxSx1EOBYXa3NXNWj8kR1jjN8rzluwojJVWWaHJ4r1U5LfICnM3g==}
+    peerDependencies:
+      typescript: '>=5'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
   vite-plus@0.2.0:
     resolution: {integrity: sha512-/GO1AlECCa9fzR7BLutUiIPuxJyAUr49Zn9uXupyTwI55+04fSldLLZrw8uCplLHtKxA6/4gnatl8UrTtgtYJw==}
     engines: {node: ^22.18.0 || >=24.11.0}
@@ -5212,6 +5223,10 @@ snapshots:
       react: 19.2.0
 
   util-deprecate@1.0.2: {}
+
+  valibot@1.4.1(typescript@6.0.2):
+    optionalDependencies:
+      typescript: 6.0.2
 
   vite-plus@0.2.0(@types/node@22.10.2)(@voidzero-dev/vite-plus-core@0.2.0(@types/node@22.10.2)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.22.4)(typescript@6.0.2))(esbuild@0.28.1)(jiti@2.7.0)(jsdom@28.1.0)(tsx@4.22.4)(typescript@6.0.2):
     dependencies:

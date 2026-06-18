@@ -11,10 +11,10 @@ Build a full-stack task management app where users can create projects, manage t
 - [ ] 1. Project setup ➕ 2026-06-18
   - [ ] Choose the stack for frontend, backend, database, and ORM ➕ 2026-06-18
   - [x] Set up the project repository ➕ 2026-06-18 ✅ 2026-06-18
-  - [ ] Configure environment variables ➕ 2026-06-18
+  - [x] Configure environment variables ➕ 2026-06-18 ✅ 2026-06-18
   - [x] Connect the app to a real database ➕ 2026-06-18 ✅ 2026-06-18
-  - [ ] Add basic error handling utilities ➕ 2026-06-18
-  - [ ] Add validation utilities or validation library ➕ 2026-06-18
+  - [x] Add basic error handling utilities ➕ 2026-06-18 ✅ 2026-06-18
+  - [x] Add validation utilities or validation library ➕ 2026-06-18 ✅ 2026-06-18
 - [ ] 2. Database schema ➕ 2026-06-18
   - [ ] Create `users` table/model ➕ 2026-06-18
     - [ ] `id` ➕ 2026-06-18
