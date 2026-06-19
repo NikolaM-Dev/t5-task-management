@@ -8,21 +8,14 @@ Build a full-stack task management app where users can create projects, manage t
 
 ## MVP Road-map
 
-- [ ] 1. Project setup ➕ 2026-06-18
-  - [ ] Choose the stack for frontend, backend, database, and ORM ➕ 2026-06-18
-  - [x] Set up the project repository ➕ 2026-06-18 ✅ 2026-06-18
-  - [x] Configure environment variables ➕ 2026-06-18 ✅ 2026-06-18
-  - [x] Connect the app to a real database ➕ 2026-06-18 ✅ 2026-06-18
-  - [x] Add basic error handling utilities ➕ 2026-06-18 ✅ 2026-06-18
-  - [x] Add validation utilities or validation library ➕ 2026-06-18 ✅ 2026-06-18
 - [ ] 2. Database schema ➕ 2026-06-18
-  - [ ] Create `users` table/model ➕ 2026-06-18
-    - [ ] `id` ➕ 2026-06-18
-    - [ ] `name` ➕ 2026-06-18
-    - [ ] `email` ➕ 2026-06-18
-    - [ ] `password_hash` ➕ 2026-06-18
-    - [ ] `created_at` ➕ 2026-06-18
-    - [ ] `updated_at` ➕ 2026-06-18
+  - [x] Create `users` table/model ➕ 2026-06-18 ✅ 2026-06-19
+    - [x] `id` ➕ 2026-06-18 ✅ 2026-06-19
+    - [x] `name` ➕ 2026-06-18 ✅ 2026-06-19
+    - [x] `email` ➕ 2026-06-18 ✅ 2026-06-19
+    - [x] `password_hash` ➕ 2026-06-18 ✅ 2026-06-19
+    - [x] `created_at` ➕ 2026-06-18 ✅ 2026-06-19
+    - [x] `updated_at` ➕ 2026-06-18 ✅ 2026-06-19
   - [ ] Add unique constraint for `users.email` ➕ 2026-06-18
   - [ ] Create `projects` table/model ➕ 2026-06-18
     - [ ] `id` ➕ 2026-06-18
@@ -65,6 +58,7 @@ Build a full-stack task management app where users can create projects, manage t
   - [ ] Implement logout endpoint: `POST /api/auth/logout` ➕ 2026-06-18
   - [ ] Implement current user endpoint: `GET /api/auth/me` ➕ 2026-06-18
   - [ ] Protect authenticated routes from unauthenticated users ➕ 2026-06-18
+- [ ] Add an auth middleware for the health endpoints ➕ 2026-06-19
 - [ ] 4. Project backend ➕ 2026-06-18
   - [ ] Implement get projects endpoint: `GET /api/projects` ➕ 2026-06-18
     - [ ] Return only projects owned by the logged-in user ➕ 2026-06-18
@@ -243,29 +237,37 @@ Build a full-stack task management app where users can create projects, manage t
   - [ ] Data is stored in a real database ➕ 2026-06-18
   - [ ] Users cannot access other users' data ➕ 2026-06-18
 
-## Optional upgrades after MVP ➕ 2026-06-18
-
-➕ 2026-06-18
-
-- [ ] Add drag and drop tasks between columns ➕ 2026-06-18
-- [ ] Add task search ➕ 2026-06-18
-- [ ] Add task filters by priority ➕ 2026-06-18
-- [ ] Add task filters by status ➕ 2026-06-18
-- [ ] Add comments on tasks ➕ 2026-06-18
-- [ ] Add multiple users per project ➕ 2026-06-18
-- [ ] Add task assignment to users ➕ 2026-06-18
-- [ ] Add email notifications ➕ 2026-06-18
-- [ ] Add dark mode ➕ 2026-06-18
-- [ ] Add activity log ➕ 2026-06-18
-- [ ] Add file attachments ➕ 2026-06-18
-- [ ] Add pagination ➕ 2026-06-18
-- [ ] Deploy frontend and backend ➕ 2026-06-18
-- [ ] Add automated tests ➕ 2026-06-18
+- [ ] 12. Optional upgrades after MVP ➕ 2026-06-18
+  - [ ] Add drag and drop tasks between columns ➕ 2026-06-18
+  - [ ] Add task search ➕ 2026-06-18
+  - [ ] Add task filters by priority ➕ 2026-06-18
+  - [ ] Add task filters by status ➕ 2026-06-18
+  - [ ] Add comments on tasks ➕ 2026-06-18
+  - [ ] Add multiple users per project ➕ 2026-06-18
+  - [ ] Add task assignment to users ➕ 2026-06-18
+  - [ ] Add email notifications ➕ 2026-06-18
+  - [ ] Add dark mode ➕ 2026-06-18
+  - [ ] Add activity log ➕ 2026-06-18
+  - [ ] Add file attachments ➕ 2026-06-18
+  - [ ] Add pagination ➕ 2026-06-18
+  - [ ] Deploy frontend and backend ➕ 2026-06-18
+  - [ ] Add automated tests ➕ 2026-06-18
 
 ---
 
 ## 🗃️ Archive
 
+- [x] 1. Project setup ➕ 2026-06-18 ✅ 2026-06-19
+  - [x] Choose the stack for frontend, backend, database, and ORM ➕ 2026-06-18 ✅ 2026-06-19
+  - [x] Add `.env.example` file ➕ 2026-06-18 ✅ 2026-06-19
+  - [x] Add drizzle-orm setup ➕ 2026-06-19 ✅ 2026-06-19
+    - [x] Add my own implementation ➕ 2026-06-19 ✅ 2026-06-19
+    - [x] Check how the offical template does it ➕ 2026-06-19 ✅ 2026-06-19
+  - [x] Set up the project repository ➕ 2026-06-18 ✅ 2026-06-18
+  - [x] Configure environment variables ➕ 2026-06-18 ✅ 2026-06-18
+  - [x] Connect the app to a real database ➕ 2026-06-18 ✅ 2026-06-18
+  - [x] Add basic error handling utilities ➕ 2026-06-18 ✅ 2026-06-18
+  - [x] Add validation utilities or validation library ➕ 2026-06-18 ✅ 2026-06-18
 - [x] 0. Project bootstrap ➕ 2026-06-18 ✅ 2026-06-18
   - [x] Setup oxlint ➕ 2026-06-18 ✅ 2026-06-18
   - [x] Setup oxfmt ➕ 2026-06-18 ✅ 2026-06-18
