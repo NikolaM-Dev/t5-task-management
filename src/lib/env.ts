@@ -1,7 +1,7 @@
 import * as v from 'valibot';
 
-const envVariables = v.object({
+const processEnvSchema = v.object({
   DATABASE_URL: v.string(),
 });
 
-export const env = v.parse(envVariables, process.env);
+export const safeEnv = v.parse(processEnvSchema, process.env);
