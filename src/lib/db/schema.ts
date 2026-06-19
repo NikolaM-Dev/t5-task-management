@@ -20,7 +20,7 @@ export const usersTable = t.pgTable(
   'users',
   withIdAndTimestamps({
     name: t.varchar().notNull(),
-    email: t.varchar().notNull().unique(),
+    email: t.varchar().notNull(),
     passwordHash: t.text().notNull(),
   }),
   (table) => [t.uniqueIndex().on(table.email)],
