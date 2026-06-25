@@ -8,36 +8,6 @@ Build a full-stack task management app where users can create projects, manage t
 
 ## MVP Road-map
 
-- [ ] 2. Database schema ➕ 2026-06-18
-  - [x] Create `users` table/model ➕ 2026-06-18 ✅ 2026-06-19
-    - [x] `id` ➕ 2026-06-18 ✅ 2026-06-19
-    - [x] `name` ➕ 2026-06-18 ✅ 2026-06-19
-    - [x] `email` ➕ 2026-06-18 ✅ 2026-06-19
-    - [x] `password_hash` ➕ 2026-06-18 ✅ 2026-06-19
-    - [x] `created_at` ➕ 2026-06-18 ✅ 2026-06-19
-    - [x] `updated_at` ➕ 2026-06-18 ✅ 2026-06-19
-  - [ ] Add unique constraint for `users.email` ➕ 2026-06-18
-  - [ ] Create `projects` table/model ➕ 2026-06-18
-    - [ ] `id` ➕ 2026-06-18
-    - [ ] `owner_id` ➕ 2026-06-18
-    - [ ] `name` ➕ 2026-06-18
-    - [ ] `description` ➕ 2026-06-18
-    - [ ] `created_at` ➕ 2026-06-18
-    - [ ] `updated_at` ➕ 2026-06-18
-  - [ ] Create `tasks` table/model ➕ 2026-06-18
-    - [ ] `id` ➕ 2026-06-18
-    - [ ] `project_id` ➕ 2026-06-18
-    - [ ] `title` ➕ 2026-06-18
-    - [ ] `description` ➕ 2026-06-18
-    - [ ] `status` ➕ 2026-06-18
-    - [ ] `priority` ➕ 2026-06-18
-    - [ ] `due_date` ➕ 2026-06-18
-    - [ ] `created_at` ➕ 2026-06-18
-    - [ ] `updated_at` ➕ 2026-06-18
-  - [ ] Define relationship: one user has many projects ➕ 2026-06-18
-  - [ ] Define relationship: one project has many tasks ➕ 2026-06-18
-  - [ ] Configure project deletion to delete related tasks ➕ 2026-06-18
-  - [ ] Configure user deletion to delete related projects and tasks ➕ 2026-06-18
 - [ ] 3. Authentication backend ➕ 2026-06-18
   - [ ] Implement password hashing ➕ 2026-06-18
   - [ ] Implement user registration endpoint: `POST /api/auth/register` ➕ 2026-06-18
@@ -257,6 +227,36 @@ Build a full-stack task management app where users can create projects, manage t
 
 ## 🗃️ Archive
 
+- [x] 2. Database schema ➕ 2026-06-18 ✅ 2026-06-25
+  - [x] Create `users` table/model ➕ 2026-06-18 ✅ 2026-06-19
+    - [x] `id` ➕ 2026-06-18 ✅ 2026-06-19
+    - [x] `name` ➕ 2026-06-18 ✅ 2026-06-19
+    - [x] `email` ➕ 2026-06-18 ✅ 2026-06-19
+    - [x] `password_hash` ➕ 2026-06-18 ✅ 2026-06-19
+    - [x] `created_at` ➕ 2026-06-18 ✅ 2026-06-19
+    - [x] `updated_at` ➕ 2026-06-18 ✅ 2026-06-19
+  - [x] Add unique constraint for `users.email` ➕ 2026-06-18 ✅ 2026-06-19
+  - [x] Create `projects` table/model ➕ 2026-06-18 ✅ 2026-06-25
+    - [x] `id` ➕ 2026-06-18 ✅ 2026-06-25
+    - [x] `owner_id` ➕ 2026-06-18 ✅ 2026-06-25
+    - [x] `name` ➕ 2026-06-18 ✅ 2026-06-25
+    - [x] `description` ➕ 2026-06-18 ✅ 2026-06-25
+    - [x] `created_at` ➕ 2026-06-18 ✅ 2026-06-25
+    - [x] `updated_at` ➕ 2026-06-18 ✅ 2026-06-25
+  - [x] Create `tasks` table/model ➕ 2026-06-18 ✅ 2026-06-25
+    - [x] `id` ➕ 2026-06-18 ✅ 2026-06-25
+    - [x] `project_id` ➕ 2026-06-18 ✅ 2026-06-25
+    - [x] `title` ➕ 2026-06-18 ✅ 2026-06-25
+    - [x] `description` ➕ 2026-06-18 ✅ 2026-06-25
+    - [x] `status` ➕ 2026-06-18 ✅ 2026-06-25
+    - [x] `priority` ➕ 2026-06-18 ✅ 2026-06-25
+    - [x] `due_date` ➕ 2026-06-18 ✅ 2026-06-25
+    - [x] `created_at` ➕ 2026-06-18 ✅ 2026-06-25
+    - [x] `updated_at` ➕ 2026-06-18 ✅ 2026-06-25
+  - [x] Define relationship: one user has many projects ➕ 2026-06-18 ✅ 2026-06-25
+  - [x] Define relationship: one project has many tasks ➕ 2026-06-18 ✅ 2026-06-25
+  - [x] Configure project deletion to delete related tasks ➕ 2026-06-18 ✅ 2026-06-25
+  - [x] Configure user deletion to delete related projects and tasks ➕ 2026-06-18 ✅ 2026-06-25
 - [x] 1. Project setup ➕ 2026-06-18 ✅ 2026-06-19
   - [x] Choose the stack for frontend, backend, database, and ORM ➕ 2026-06-18 ✅ 2026-06-19
   - [x] Add `.env.example` file ➕ 2026-06-18 ✅ 2026-06-19
