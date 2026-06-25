@@ -37,3 +37,22 @@ export const projectsTable = t.pgTable(
     description: t.text(),
   }),
 );
+
+export const taskStatusEnum = t.pgEnum('task_status', ['todo', 'in_progress', 'done']);
+export const taskPriorityEnum = t.pgEnum('task_priority', ['low', 'medium', 'high']);
+
+export const tasksTable = t.pgTable(
+  'tasks',
+  withIdAndTimestamps({
+    projectId: t
+      .bigint({ mode: 'number' })
+      .notNull()
+      .references(() => projectsTable.id),
+    title: t.varchar().notNull(),
+    description: t.text(),
+    status: taskStatusEnum().default('todo'),
+    priority: taskPriorityEnum().default('low'),
+    dueDate: t.timestamp({ withTimezone: true }),
+  }),
+  (table) => [t.index().on(table.status), t.index().on(table.priority)],
+);
