@@ -25,3 +25,15 @@ export const usersTable = t.pgTable(
   }),
   (table) => [t.uniqueIndex().on(table.email)],
 );
+
+export const projectsTable = t.pgTable(
+  'projects',
+  withIdAndTimestamps({
+    ownerId: t
+      .bigint({ mode: 'number' })
+      .notNull()
+      .references(() => usersTable.id),
+    name: t.varchar().notNull(),
+    description: t.text(),
+  }),
+);
