@@ -25,3 +25,34 @@ export const usersTable = t.pgTable(
   }),
   (table) => [t.uniqueIndex().on(table.email)],
 );
+
+export const projectsTable = t.pgTable(
+  'projects',
+  withIdAndTimestamps({
+    ownerId: t
+      .bigint({ mode: 'number' })
+      .notNull()
+      .references(() => usersTable.id, { onDelete: 'cascade' }),
+    name: t.varchar().notNull(),
+    description: t.text(),
+  }),
+);
+
+export const taskStatusEnum = t.pgEnum('task_status', ['todo', 'in_progress', 'done']);
+export const taskPriorityEnum = t.pgEnum('task_priority', ['low', 'medium', 'high']);
+
+export const tasksTable = t.pgTable(
+  'tasks',
+  withIdAndTimestamps({
+    projectId: t
+      .bigint({ mode: 'number' })
+      .notNull()
+      .references(() => projectsTable.id, { onDelete: 'cascade' }),
+    title: t.varchar().notNull(),
+    description: t.text(),
+    status: taskStatusEnum().default('todo'),
+    priority: taskPriorityEnum().default('low'),
+    dueDate: t.timestamp({ withTimezone: true }),
+  }),
+  (table) => [t.index().on(table.status), t.index().on(table.priority)],
+);
