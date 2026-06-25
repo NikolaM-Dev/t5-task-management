@@ -32,7 +32,7 @@ export const projectsTable = t.pgTable(
     ownerId: t
       .bigint({ mode: 'number' })
       .notNull()
-      .references(() => usersTable.id),
+      .references(() => usersTable.id, { onDelete: 'cascade' }),
     name: t.varchar().notNull(),
     description: t.text(),
   }),
@@ -47,7 +47,7 @@ export const tasksTable = t.pgTable(
     projectId: t
       .bigint({ mode: 'number' })
       .notNull()
-      .references(() => projectsTable.id),
+      .references(() => projectsTable.id, { onDelete: 'cascade' }),
     title: t.varchar().notNull(),
     description: t.text(),
     status: taskStatusEnum().default('todo'),
